@@ -5,26 +5,36 @@ namespace Katas;
 class RomanNumerals
 {
     private const NUMERALS = [
-        20 => "XX",
-        19 => "XIX",
-        15 => "XV",
-        14 => "XIV",
         10 => "X",
         9 => "IX",
         5 => "V",
-        4 => "IV"
+        4 => "IV",
+        1 => "I"
     ];
 
-    public function numbersToNumerals(int $number): string
+    public function convertToNumeral(int $number): string
     {
         $output = "";
         foreach (self::NUMERALS as $value => $numeral) {
-            if (intdiv($number, $value) > 0) {
-                $output = $numeral;
-                $number -= $value;
-            }
+            $output .= $this->repeatNumeral($numeral, $number, $value);
+            $number -= $this->subtractNumeralsValue($number, $value);
         }
-        return $output . str_repeat('I', $number);
+        return $output;
+    }
+
+    public function getTimesNumberIsDivisibleByValue(int $number, int $value): int
+    {
+        return intdiv($number, $value);
+    }
+
+    public function repeatNumeral(string $numeral, int $number, int $value): string
+    {
+        return str_repeat($numeral, $this->getTimesNumberIsDivisibleByValue($number, $value));
+    }
+
+    public function subtractNumeralsValue(int $number, int $value): int
+    {
+        return $this->getTimesNumberIsDivisibleByValue($number, $value) * $value;
     }
 }
 
