@@ -76,4 +76,14 @@ class RomanNumeralsTest extends TestCase
     {
         $this->assertSame('XVI', (new RomanNumerals())->numbersToNumerals(16));
     }
+
+    public function  testItReturnsXIXWhenInputIsNineteen(): void
+    {
+        $this->assertSame('XIX', (new RomanNumerals())->numbersToNumerals(19));
+    }
+
+    public function  testItReturnsXXWhenInputIsTwenty(): void
+    {
+        $this->assertSame('XX', (new RomanNumerals())->numbersToNumerals(20));
+    }
 }

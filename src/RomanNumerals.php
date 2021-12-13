@@ -5,6 +5,8 @@ namespace Katas;
 class RomanNumerals
 {
     private const NUMERALS = [
+        20 => "XX",
+        19 => "XIX",
         15 => "XV",
         14 => "XIV",
         10 => "X",
@@ -22,7 +24,6 @@ class RomanNumerals
                 $number -= $value;
             }
         }
-
         return $output . str_repeat('I', $number);
     }
 }
