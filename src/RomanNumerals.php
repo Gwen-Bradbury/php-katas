@@ -5,6 +5,8 @@ namespace Katas;
 class RomanNumerals
 {
     private const NUMERALS = [
+        15 => "XV",
+        14 => "XIV",
         10 => "X",
         9 => "IX",
         5 => "V",
