@@ -5,8 +5,8 @@ namespace Katas\Tests;
 use Katas\NumeralsToNumbers;
 use PHPUnit\Framework\TestCase;
 
-class NumeralsToNumbersTest extends TestCase
-{
+class NumeralsToNumbersTest extends TestCase {
+
     public function testItReturnsOneWhenInputIsI(): void
     {
         $this->assertSame(1, (new NumeralsToNumbers())->convertToNumber("I"));
@@ -35,5 +35,10 @@ class NumeralsToNumbersTest extends TestCase
     public function testItReturnsSixWhenInputIsVI(): void
     {
         $this->assertSame(6, (new NumeralsToNumbers())->convertToNumber("VI"));
+    }
+
+    public function testItReturnsSevenWhenInputIsVII(): void
+    {
+        $this->assertSame(7, (new NumeralsToNumbers())->convertToNumber("VII"));
     }
 }
