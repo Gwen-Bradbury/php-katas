@@ -31,4 +31,9 @@ class NumeralsToNumbersTest extends TestCase
     {
         $this->assertSame(5, (new NumeralsToNumbers())->convertToNumber("V"));
     }
+
+    public function testItReturnsSixWhenInputIsVI(): void
+    {
+        $this->assertSame(6, (new NumeralsToNumbers())->convertToNumber("VI"));
+    }
 }

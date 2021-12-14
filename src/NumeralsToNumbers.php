@@ -6,18 +6,18 @@ class NumeralsToNumbers
 {
     public function convertToNumber(string $numeral): int
     {
+        $numeralsToI = [
+            "IV" => "IIII",
+            "V" => "IIIII",
+            "VI" => "IIIIII"
+        ];
 
-        if ($numeral === "V") {
-            $number = 5;
-        } elseif ($numeral === "IV") {
-            $number = 4;
-        } else {
-            $number = substr_count($numeral, "I");
+        foreach ($numeralsToI as $key => $value) {
+            if($numeral === $key) {
+                $numeral = $value;
+            }
         }
-        return $number;
+        return substr_count($numeral, "I");
     }
 }
-
-
-
 
