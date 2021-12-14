@@ -6,13 +6,17 @@ class NumeralsToNumbers
 {
     public function convertToNumber(string $numeral): int
     {
-        if ($numeral === "IV"){
+        if ($numeral === "IV") {
             $numeral = "IIII";
         }
 
-        if ($I = strrchr($numeral, "V")) {
-            $I = "IIIII";
-            $numeral .= $I;
+        if ($numeral === "IX") {
+            $numeral = "IIIIIIIII";
+        }
+
+        if ($V = strrchr($numeral, "V")) {
+            $V = "IIIII";
+            $numeral .= $V;
         }
         return substr_count($numeral, "I");
     }
