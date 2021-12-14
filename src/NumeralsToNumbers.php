@@ -6,15 +6,14 @@ class NumeralsToNumbers
 {
     public function convertToNumber(string $numeral): int
     {
-        return strlen($numeral);
+        if ($numeral === "IV") {
+            return 4;
+        }
+       return substr_count($numeral, "I");
+
     }
 }
 
 
-//if ($numeral >= "III") {
-//    $number = 3;
-//}
-//if ($numeral === "II") {
-//    $number = 2;
-//}
-//return $number;
+
+
