@@ -9,17 +9,13 @@ class CodeWarsTribonacciSequence
 {
     public function tribonacci(array $signature, int $n): array
     {
-        if ($n === 0) {
-            $sequence = [];
-        } elseif ($n < 3) {
-            $sequence[] = $n;
-        }else {
-            $sequence = $signature;
-        }
-
-        for ($i = 1; count($sequence) < $n; $i++) {
-            $value = $sequence[$i - 1] + $sequence[$i] + $sequence[$i + 1];
-            $sequence[] = $value;
+        $sequence = [];
+        for ($i = 0; $i < $n; $i++) {
+            if ($i < 3) {
+                $sequence[$i] = $signature[$i];
+            } else {
+                $sequence[$i] = $sequence[$i - 1] + $sequence[$i - 2] + $sequence[$i - 3];
+            }
         }
         return $sequence;
     }
