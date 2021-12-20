@@ -9,44 +9,44 @@ class CodeWarsTribonacciSequenceTest extends TestCase
 {
     public function testItReturnsEmptyArrayIfNIs0(): void
     {
-        $this->assertSame([], (new CodeWarsTribonacciSequence())->tribonacci([1, 1, 1], 0));
+        $this->assertSame([], (new CodeWarsTribonacciSequence())->findTheNextNumber([1, 1, 1], 0));
     }
 
     public function testItReturns1IfNIs1(): void
     {
-        $this->assertSame([1], (new CodeWarsTribonacciSequence())->tribonacci([1, 1, 1], 1));
+        $this->assertSame([1], (new CodeWarsTribonacciSequence())->findTheNextNumber([1, 1, 1], 1));
     }
 
     public function testItReturnsSumOfOneOneOne(): void
     {
-        $this->assertSame([1, 1, 1, 3], (new CodeWarsTribonacciSequence())->tribonacci([1, 1, 1], 4));
+        $this->assertSame([1, 1, 1, 3], (new CodeWarsTribonacciSequence())->findTheNextNumber([1, 1, 1], 4));
     }
 
     public function testItReturnsSumOfOneOneTwo(): void
     {
-        $this->assertSame([1, 1, 2, 4], (new CodeWarsTribonacciSequence())->tribonacci([1, 1, 2], 4));
+        $this->assertSame([1, 1, 2, 4], (new CodeWarsTribonacciSequence())->findTheNextNumber([1, 1, 2], 4));
     }
 
     public function testItReturnsSumOfOneOneThree(): void
     {
-        $this->assertSame([1, 1, 3, 5], (new CodeWarsTribonacciSequence())->tribonacci([1, 1, 3], 4));
+        $this->assertSame([1, 1, 3, 5], (new CodeWarsTribonacciSequence())->findTheNextNumber([1, 1, 3], 4));
     }
 
     public function testItReturnsSumOfThreePreviousSignaturesOneOneThree(): void
     {
-        $this->assertSame([1, 1, 1, 3, 5], (new CodeWarsTribonacciSequence())->tribonacci([1, 1, 1], 5));
+        $this->assertSame([1, 1, 1, 3, 5], (new CodeWarsTribonacciSequence())->findTheNextNumber([1, 1, 1], 5));
     }
 
     public function testItReturnsSumOfThreePreviousSignaturesOneThreeFive(): void
     {
-        $this->assertSame([1, 1, 1, 3, 5, 9], (new CodeWarsTribonacciSequence())->tribonacci([1, 1, 1], 6));
+        $this->assertSame([1, 1, 1, 3, 5, 9], (new CodeWarsTribonacciSequence())->findTheNextNumber([1, 1, 1], 6));
     }
 
     public function testItReturnsSumOfThreePreviousSignaturesUpToTen(): void
     {
         $this->
         assertSame([1, 1, 1, 3, 5, 9, 17, 31, 57, 105], (new CodeWarsTribonacciSequence())->
-        tribonacci([1, 1, 1], 10));
+        findTheNextNumber([1, 1, 1], 10));
     }
 }
 
